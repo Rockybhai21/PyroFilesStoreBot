@@ -39,7 +39,10 @@ from handlers.save_media import (
 
 MediaList = {}
 
-Bot = Client(
+class Bot(Client): 
+    def __init__(self):
+        super().__init__(
+    name=Config.BOT_USERNAME       
     in_memory=True,
     bot_token=Config.BOT_TOKEN,
     api_id=Config.API_ID,
